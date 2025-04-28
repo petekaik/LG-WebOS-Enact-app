@@ -1,14 +1,3 @@
-# LG-WebOS-enact-app
-LG WebOS app generated with AI tools
-
-## Mission statement
-Experiment goal is to generate a Enact framework app with packaging automation using VSCode and GenAI tools.
-
-## File structure
-- **README**: This file
-- **/workspace**: Folder containing all application development files (source code, additional resources, node, build output, etc.)
-- **/workspace/documentation**: Folder containing additional documentation (technical specification, user stories, defect log, development log, enhancement ideas, etc.)
-
 ChatGPT research output: 
 ## Best Practices for LG webOS 4.4.3 App Development
 
