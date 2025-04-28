@@ -1,0 +1,15 @@
+{
+  "theme": "moonstone",
+  "target": "webos",
+  "template": "html",
+  "isomorphic": false,
+  "deep": false,
+  "nodeBuiltins": false,
+  "locale": "en-US",
+  "proxy": true,
+  "webos": {
+    "appinfo": "webos-meta/appinfo.json",
+    "icon": "webos-meta/assets/icon.png",
+    "largeIcon": "webos-meta/assets/largeIcon.png"
+  }
+}

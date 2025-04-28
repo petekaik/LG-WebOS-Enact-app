@@ -1,0 +1,9 @@
+{
+  "theme": "moonstone",
+  "target": "webos",
+  "template": "html",
+  "isomorphic": false,
+  "deep": false,
+  "locale": "en-US",
+  "proxy": true
+}

@@ -5,8 +5,32 @@ LG WebOS app generated with AI tools
 Experiment goal is to generate a Enact framework app with packaging automation using VSCode and GenAI tools.
 
 ## File structure
+LG-WebOS-Enact-app/
+├── LICENSE
+├── README.md
+└── workspace/
+    ├── app/               # Your active development project
+    │   ├── node_modules/
+    │   ├── package.json
+    │   ├── resources/
+    │   ├── src/
+    │   └── webos-meta/
+    ├── archive/           # Old files for reference
+    │   ├── appinfo.json
+    │   ├── hello-webcam-app/
+    │   ├── hello-webcam-app-new/
+    │   ├── icon.png
+    │   ├── index.html
+    │   └── largeIcon.png
+    ├── documentation/     # Project documentation 
+    │   ├── app-research.md
+    │   ├── genai-guidance.md
+    │   ├── technical-specifications.md
+    │   └── user-stories.md
+    └── libraries/         # External libraries
+        └── webOSTVjs-1.2.10/
 - **README**: This file
-- **/workspace**: Folder containing all application development files (source code, additional resources, node, build output, etc.)
+- **/workspace/app**: Folder containing all application development files (source code, additional resources, node, build output, etc.)
 - **/workspace/documentation**: Folder containing additional documentation (technical specification, user stories, defect log, development log, enhancement ideas, etc.)
 
 ChatGPT research output: 
