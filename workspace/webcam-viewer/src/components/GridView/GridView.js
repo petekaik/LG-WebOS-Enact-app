@@ -1,17 +1,17 @@
+import React from 'react';
 import kind from '@enact/core/kind';
 import PropTypes from 'prop-types';
-import {useCallback} from 'react';
-import Spotlight from '@enact/spotlight';
 import Scroller from '@enact/moonstone/Scroller';
 
 import WebcamFeed from '../WebcamFeed/WebcamFeed';
 
 import css from './GridView.module.less';
 
-const GridView = kind({
-	name: 'GridView',
-
-	propTypes: {
+/**
+ * GridView component base implementation
+ */
+class GridViewBase extends React.Component {
+	static propTypes = {
 		webcams: PropTypes.arrayOf(
 			PropTypes.shape({
 				id: PropTypes.string.isRequired,
@@ -20,33 +20,30 @@ const GridView = kind({
 			})
 		),
 		onSelect: PropTypes.func
-	},
+	};
 
-	defaultProps: {
+	static defaultProps = {
 		webcams: []
-	},
+	};
 
-	styles: {
-		css,
-		className: 'gridView'
-	},
+	handleSelect = (webcam) => {
+		if (this.props.onSelect) {
+			this.props.onSelect(webcam);
+		}
+	};
 
-	render: ({webcams, onSelect, ...rest}) => {
-		const handleSelect = useCallback((webcam) => {
-			if (onSelect) {
-				onSelect(webcam);
-			}
-		}, [onSelect]);
+	render() {
+		const { webcams, ...rest } = this.props;
 
 		return (
-			<Scroller {...rest}>
+			<Scroller {...rest} className={css.gridView}>
 				<div className={css.grid}>
 					{webcams.map((webcam) => (
 						<WebcamFeed
 							key={webcam.id}
 							url={webcam.url}
 							title={webcam.title}
-							onSelect={() => handleSelect(webcam)}
+							onSelect={() => this.handleSelect(webcam)}
 						/>
 					))}
 					{webcams.length === 0 && (
@@ -58,6 +55,17 @@ const GridView = kind({
 			</Scroller>
 		);
 	}
+}
+
+const GridView = kind({
+	name: 'GridView',
+
+	styles: {
+		css,
+		className: 'gridView'
+	},
+
+	render: (props) => <GridViewBase {...props} />
 });
 
 export default GridView;

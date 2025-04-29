@@ -1,45 +1,59 @@
+import React from 'react';
 import kind from '@enact/core/kind';
 import PropTypes from 'prop-types';
 import Spottable from '@enact/spotlight/Spottable';
 import Image from '@enact/moonstone/Image';
 import Spinner from '@enact/moonstone/Spinner';
-import {useState, useEffect} from 'react';
 
 import css from './WebcamFeed.module.less';
 
-const WebcamFeedBase = kind({
-	name: 'WebcamFeed',
-
-	propTypes: {
+/**
+ * WebcamFeed base component
+ */
+class WebcamFeedCore extends React.Component {
+	static propTypes = {
 		url: PropTypes.string.isRequired,
 		title: PropTypes.string,
 		onSelect: PropTypes.func
-	},
+	};
 
-	defaultProps: {
+	static defaultProps = {
 		title: ''
-	},
+	};
 
-	styles: {
-		css,
-		className: 'webcamFeed'
-	},
+	state = {
+		loading: true,
+		error: false
+	};
 
-	render: ({url, title, onSelect, ...rest}) => {
-		const [loading, setLoading] = useState(true);
-		const [error, setError] = useState(false);
+	componentDidMount() {
+		this.startLoading();
+	}
 
-		useEffect(() => {
-			setLoading(true);
-			setError(false);
-			
-			// In a real app, this would handle webcam connection and error states
-			const timer = setTimeout(() => {
-				setLoading(false);
-			}, 2000);
+	componentDidUpdate(prevProps) {
+		if (prevProps.url !== this.props.url) {
+			this.startLoading();
+		}
+	}
 
-			return () => clearTimeout(timer);
-		}, [url]);
+	componentWillUnmount() {
+		if (this.loadingTimer) {
+			clearTimeout(this.loadingTimer);
+		}
+	}
+
+	startLoading = () => {
+		this.setState({ loading: true, error: false });
+		
+		// In a real app, this would handle webcam connection and error states
+		this.loadingTimer = setTimeout(() => {
+			this.setState({ loading: false });
+		}, 2000);
+	};
+
+	render() {
+		const { url, title, onSelect, ...rest } = this.props;
+		const { loading, error } = this.state;
 
 		return (
 			<div {...rest} onClick={onSelect}>
@@ -58,6 +72,20 @@ const WebcamFeedBase = kind({
 			</div>
 		);
 	}
+}
+
+/**
+ * Apply styling to the WebcamFeed component
+ */
+const WebcamFeedBase = kind({
+	name: 'WebcamFeedBase',
+
+	styles: {
+		css,
+		className: 'webcamFeed'
+	},
+
+	render: (props) => <WebcamFeedCore {...props} />
 });
 
 const WebcamFeed = Spottable(WebcamFeedBase);

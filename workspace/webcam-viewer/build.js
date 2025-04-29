@@ -25,10 +25,7 @@ const WEBOS_META_DIR = path.join(ROOT_DIR, 'webos-meta');
 // Required resources
 const REQUIRED_RESOURCES = [
   'icon.png',
-  'icon-mini.png',
-  'icon-large.png',
-  'splash.png',
-  'bg.png'
+  'largeIcon.png'
 ];
 
 // Create CLI interface
