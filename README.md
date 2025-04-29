@@ -17,9 +17,9 @@ LG-WebOS-Enact-app/
 │   └── user-stories.md
 └── libraries/             # External libraries
     └── webOSTVjs-1.2.10/
-- **README**: This file
-- **/workspace/app**: Folder containing all application development files (source code, additional resources, node, build output, etc.)
-- **/workspace/documentation**: Folder containing additional documentation (technical specification, user stories, defect log, development log, enhancement ideas, etc.)
+
+- **/workspace/**: Folder containing all application development files (source code, additional resources, node, build scripts, packages, etc.)
+- **/documentation/**: Folder containing additional documentation (technical specification, user stories, defect log, development log, enhancement ideas, etc.)
 
 ChatGPT research output: 
 ## Best Practices for LG webOS 4.4.3 App Development
