@@ -1,12 +1,10 @@
 {
   "id": "com.morgeweb.webcam2",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "vendor": "MorgeWeb",
   "type": "web",
   "main": "index.html",
   "title": "Webcam 2.0",
   "icon": "icon.png",
-  "largeIcon": "largeIcon.png",
-  "miniicon": "icon.png",
-  "iconColor": "#ff0000"
+  "largeIcon": "largeIcon.png"
 }

@@ -13,7 +13,7 @@ This app is designed to run on LG TVs, specifically the OLED65C8 model with webO
   - Prioritize 5-way (up/down/left/right/select) navigation support.
   - Ensure all interactive elements are focusable and accessible using Spotlight focus management.
 - **Design Guidelines**:
-  - Design for TV screen resolution (1080p) and safe areas.
+  - Design for TV screen resolution (4k) and safe areas.
   - Provide large, easily selectable UI targets suitable for remote control input.
   - Avoid hover states and mouse-dependent interactions.
 - **Testing**:
