@@ -1,0 +1,17 @@
+{
+  "id": "com.morgeweb.webcamviewer",
+  "version": "1.0.0",
+  "vendor": "MorgeWeb",
+  "type": "web",
+  "main": "index.html",
+  "title": "Webcam Viewer",
+  "icon": "icon.png",
+  "miniicon": "icon-mini.png",
+  "largeIcon": "icon-large.png",
+  "splashBackground": "splash.png",
+  "bgImage": "bg.png",
+  "bgColor": "#000000",
+  "iconColor": "#ffffff",
+  "disableBackHistoryAPI": true,
+  "uiRevision": 2
+}
